@@ -43,7 +43,7 @@ struct AddNewClientView: View, TValidationProtocol {
             InformationTextField(title: "Phone Number",
                                  text: $phoneNumber,
                                  isValid: $isPhoneNumberValid,
-                                 placeholder: "Phone Number",
+                                 placeholder: "*-***-***-****",
                                  validError: invalidCharacters){}
             InformationTextField(title: "Email",
                                  text: $email,

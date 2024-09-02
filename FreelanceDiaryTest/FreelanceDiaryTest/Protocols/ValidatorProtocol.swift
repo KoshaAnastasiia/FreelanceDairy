@@ -17,12 +17,7 @@ extension TValidationProtocol {
               let validDate = try? Date(date, strategy: strategy) else {
             return false
         }
-        
-//        let calendar = Calendar.current
-//        guard calendar.compare(.now, to: validDate, toGranularity: .day) != .orderedDescending else {
-//            return false
-//        }
-//        return true
+
         guard validDate > .now else {
             return false
         }
@@ -45,11 +40,9 @@ extension TValidationProtocol {
     }
     
     func isValid(number: String) -> Bool {
-        let numberRegEx = "+^\\d{3}-\\d{3}-\\d{4}$"
+        let numberRegEx = "^\\d{1}-\\d{3}-\\d{3}-\\d{4}$"
         let numberTest = NSPredicate(format:"SELF MATCHES %@", numberRegEx)
         let result = numberTest.evaluate(with: number)
         return result
     }
-    
-
 }
